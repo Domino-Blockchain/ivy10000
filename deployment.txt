@@ -1,0 +1,27 @@
+// bsc testnet deployment
+deployer address: 0x06c24286D92B4303ac89001F77b493E64daad664
+ivy contract: 0xaa0E2136FE68CDb097373DEF907994fdB074282C
+eIvy contract: 0xdee4c15ff033d5f4df7c0cef2a305fa4510c945b
+
+poolfactory: 
+ivy per block: 6000/120 days = 1736111111111110
+blocks per update: 3456000 (120 days 3% reduction is not used)
+init block: 20033802
+
+core pool: 0x4CeC4Ad137fbD1fa3890e74E7ecF32894fF38098
+init block: 20033802
+weight: 1000
+
+register pool ok
+
+
+pending yield rewards: 574600000000000000
+                      1026000000000000000
+                        24300000000000000
+                         1736111111111110
+0.5746 / 100 = 
+
+bscmainnet
+IVY: 0xB0484A97A135C564157e2778B6a72ecc3EF29D59
+eIVY: 0x510c9ef6F5B7E0d00e285431D1D33214240C8b11
+Pool factory: 0x2d07a0dFb4189e9cAC2D0431Fa60F4Fd15A43a73
