@@ -62,6 +62,7 @@ contract IvyCorePool is IvyPoolBase {
      * @param _sivy sIVY ERC20 Token EscrowedIvyERC20 address
      * @param _factory Pool factory IvyPoolFactory instance/address
      * @param _poolToken token the pool operates on, for example IVY or IVY/ETH pair
+     * @param _rewardToken token the pool generate rewards for, for example an existing IVY 6000 for 120 days
      * @param _initBlock initial block used to calculate the rewards
      * @param _weight number representing a weight of the pool, actual weight fraction
      *      is calculated as that number divided by the total pools weight and doesn't exceed one
@@ -71,9 +72,10 @@ contract IvyCorePool is IvyPoolBase {
         address _sivy,
         IvyPoolFactory _factory,
         address _poolToken,
+        address _rewardToken,
         uint64 _initBlock,
         uint32 _weight
-    ) IvyPoolBase(_ivy, _sivy, _factory, _poolToken, _initBlock, _weight) {}
+    ) IvyPoolBase(_ivy, _sivy, _factory, _poolToken, _rewardToken, _initBlock, _weight) {}
 
     /**
      * @notice Calculates current vault rewards value available for address specified

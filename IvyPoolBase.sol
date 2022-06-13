@@ -57,6 +57,9 @@ abstract contract IvyPoolBase is IPool, IvyAware, ReentrancyGuard {
     /// @dev Link to the pool token instance, for example IVY or IVY/ETH pair
     address public immutable override poolToken;
 
+    /// @dev Link to the pool reward token instance, for example existing IVY
+    address public immutable rewardToken;
+
     /// @dev Pool weight, 100 for IVY pool or 900 for IVY/ETH
     uint32 public override weight;
 
@@ -156,6 +159,7 @@ abstract contract IvyPoolBase is IPool, IvyAware, ReentrancyGuard {
      * @param _sivy sIVY ERC20 Token EscrowedIvyERC20 address
      * @param _factory Pool factory IvyPoolFactory instance/address
      * @param _poolToken token the pool operates on, for example IVY or IVY/ETH pair
+     * @param _rewardToken token the pool generate rewards for, for example an existing IVY 6000 for 120 days
      * @param _initBlock initial block used to calculate the rewards
      *      note: _initBlock can be set to the future effectively meaning _sync() calls will do nothing
      * @param _weight number representing a weight of the pool, actual weight fraction
@@ -166,6 +170,7 @@ abstract contract IvyPoolBase is IPool, IvyAware, ReentrancyGuard {
         address _sivy,
         IvyPoolFactory _factory,
         address _poolToken,
+        address _rewardToken,
         uint64 _initBlock,
         uint32 _weight
     ) IvyAware(_ivy) {
@@ -173,6 +178,7 @@ abstract contract IvyPoolBase is IPool, IvyAware, ReentrancyGuard {
         require(_sivy != address(0), "sIVY address not set");
         require(address(_factory) != address(0), "IVY Pool fct address not set");
         require(_poolToken != address(0), "pool token address not set");
+        require(_rewardToken != address(0), "pool reward token address not set");
         require(_initBlock > 0, "init block not set");
         require(_weight > 0, "pool weight not set");
 
@@ -192,6 +198,7 @@ abstract contract IvyPoolBase is IPool, IvyAware, ReentrancyGuard {
         sivy = _sivy;
         factory = _factory;
         poolToken = _poolToken;
+        rewardToken = _rewardToken;
         weight = _weight;
 
         // init the dependent internal state variables
@@ -628,9 +635,9 @@ abstract contract IvyPoolBase is IPool, IvyAware, ReentrancyGuard {
         User storage user = users[_staker];
 
         // for Ivy just mint
-        mintIvy(_staker, pendingYield);
+        //mintIvy(_staker, pendingYield);
         // JDING: we need to transfer rewards to user wallet here
-        //SafeERC20.safeTransfer(IERC20(ivytoken), _staker, pendingYield);
+        SafeERC20.safeTransfer(IERC20(rewardToken), _staker, pendingYield);
 
         // // if sIVY is requested
         // if (_useSIVY) {

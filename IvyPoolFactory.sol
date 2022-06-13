@@ -221,16 +221,18 @@ contract IvyPoolFactory is Ownable, IvyAware {
      * @dev Can be executed by the pool factory owner only
      *
      * @param poolToken pool token address (like IVY, or IVY/ETH pair)
+     * @param rewardToken pool reward token address (like existing IVY)
      * @param initBlock init block to be used for the pool created
      * @param weight weight of the pool to be created
      */
     function createPool(
         address poolToken,
+        address rewardToken,
         uint64 initBlock,
         uint32 weight
     ) external virtual onlyOwner {
         // create/deploy new core pool instance
-        IPool pool = new IvyCorePool(ivy, sivy, this, poolToken, initBlock, weight);
+        IPool pool = new IvyCorePool(ivy, sivy, this, poolToken, rewardToken, initBlock, weight);
 
         // register it within a factory
         registerPool(address(pool));
