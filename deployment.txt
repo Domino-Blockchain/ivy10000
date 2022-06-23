@@ -83,3 +83,13 @@ Arg [5] : _initBlock (uint64): 18749139
 Arg [6] : _weight (uint32): 1000
 contract verified 6-16-2022
 
+# prod deployment 6-23-2022 6:37PM
+deployer:  0xbFa6DCE79cF253082815d6fE65996ACcD61fBf00
+investor:  0xdb53F0F462c67d16e0E680EBF8506B763c852aFC
+Deploying contracts with the account: 0xbFa6DCE79cF253082815d6fE65996ACcD61fBf00
+Account BNB balance: 621330173691148738
+IVY address:  0xB0484A97A135C564157e2778B6a72ecc3EF29D59
+ivy balance for a0 : 4000000000000000000000
+EscrowedIvyERC20 already deployed to: 0x510c9ef6F5B7E0d00e285431D1D33214240C8b11
+IvyPoolFactory already deployed to: 0x25e7cad4EdBa6ECb60B5477522C1487a21f9474d
+IvyCorePool already deployed to: 0xC857ae25e2F3c2ae721d59813a15094778738722
