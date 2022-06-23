@@ -239,6 +239,32 @@ contract IvyPoolFactory is Ownable, IvyAware {
     }
 
     /**
+     * @dev set end block when necessary
+     *
+     * @dev Can be executed by the pool factory owner only
+     *
+     * @param _endBlock end block to be used for the pool created
+     */
+    function setEndBlock(
+        uint32 _endBlock
+    ) external onlyOwner {
+        endBlock = _endBlock;
+    }
+
+    /**
+     * @dev set ivy per block when necessary
+     *
+     * @dev Can be executed by the pool factory owner only
+     *
+     * @param _ivyPerBlock ivy per block to be used for the pool created
+     */
+    function setIvyPerBlock(
+        uint192 _ivyPerBlock
+    ) external onlyOwner {
+        ivyPerBlock = _ivyPerBlock;
+    }
+
+    /**
      * @dev Registers an already deployed pool instance within the factory
      *
      * @dev Can be executed by the pool factory owner only
@@ -273,9 +299,7 @@ contract IvyPoolFactory is Ownable, IvyAware {
         // checks if ratio can be updated i.e. if blocks/update (91252 blocks) have passed
         require(shouldUpdateRatio(), "too frequent");
 
-        // this is no longer needed for Ivy as the reward does not decrease
-        // decreases IVY/block reward by 3%
-        //ivyPerBlock = (ivyPerBlock * 97) / 100;
+        ivyPerBlock = (ivyPerBlock * 99) / 100;
 
         // set current block as the last ratio update block
         lastRatioUpdate = uint32(blockNumber());

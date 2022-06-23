@@ -69,3 +69,17 @@ lastYieldDistribution  BigNumber { _hex: '0x0133ecc6', _isBigNumber: true }
 yieldRewardsPerWeight  BigNumber { _hex: '0x0e76cb', _isBigNumber: true }
 weight  1000
 iMac:hardhat-ivy shujunding$ 
+
+# prod deployment 6-16-2022 at 5:41PM EDT
+IvyPoolFactory already deployed to: 0x54f9Bda4930A6D094f210BA233F91C5a85425c0F
+IvyCorePool already deployed to: 0x4d7a74597f5A1E23af6434D9600867Cfc9866E19
+## input params:
+Arg [0] : _ivy (address): 0xb0484a97a135c564157e2778b6a72ecc3ef29d59
+Arg [1] : _sivy (address): 0x510c9ef6f5b7e0d00e285431d1d33214240c8b11
+Arg [2] : _factory (address): 0x54f9bda4930a6d094f210ba233f91c5a85425c0f
+Arg [3] : _poolToken (address): 0x8a723a8a9b030c56b518a70fbaf959c430d5335f
+Arg [4] : _rewardToken (address): 0x388ee12bb527965c32d6b29c0e81285dd026f1f8
+Arg [5] : _initBlock (uint64): 18749139
+Arg [6] : _weight (uint32): 1000
+contract verified 6-16-2022
+
