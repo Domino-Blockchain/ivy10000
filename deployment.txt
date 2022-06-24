@@ -93,3 +93,17 @@ ivy balance for a0 : 4000000000000000000000
 EscrowedIvyERC20 already deployed to: 0x510c9ef6F5B7E0d00e285431D1D33214240C8b11
 IvyPoolFactory already deployed to: 0x25e7cad4EdBa6ECb60B5477522C1487a21f9474d
 IvyCorePool already deployed to: 0xC857ae25e2F3c2ae721d59813a15094778738722
+
+# prod deployment 6-24-2022 5:27PM
+deployer:  0xbFa6DCE79cF253082815d6fE65996ACcD61fBf00
+investor:  0xdb53F0F462c67d16e0E680EBF8506B763c852aFC
+Deploying contracts with the account: 0xbFa6DCE79cF253082815d6fE65996ACcD61fBf00
+Account BNB balance: 551299409691148738
+IVY address:  0xB0484A97A135C564157e2778B6a72ecc3EF29D59
+ivy balance for a0 : 4000000000000000000000
+EscrowedIvyERC20 already deployed to: 0x510c9ef6F5B7E0d00e285431D1D33214240C8b11
+IvyPoolFactory already deployed to: 0x5dA4C870B3B71E060ac3EC5Aee7A8849E194EA53
+IvyCorePool already deployed to: 0x0a77A720C318837C18fbd27f118DC689F534D68D
+//const corePool = await IvyCorePool.deploy(ivyaddr, sivyaddr, pf.address, "0x8a723A8A9B030c56b518A70Fbaf959c430d5335f", "0x388EE12bB527965C32D6B29C0E81285Dd026F1F8", 19116249, 1000);
+
+// test contract 0x4d7a74597f5A1E23af6434D9600867Cfc9866E19 has 0.045 IVY left in it. That can be retrieved later. 6-24-2022
